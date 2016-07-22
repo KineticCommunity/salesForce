@@ -1,0 +1,37 @@
+== Salesforce Attachment Upload
+Uploads file attachment information for Kinetic Request CE form attachment to Salesforce
+
+=== Parameters
+[space_slug]
+  The Space slug where form exists in request.
+[submission_id]
+	The Id of the Submission to retrieve the attachment from.
+[field_name]
+	The name of the Field that contains the attachments.
+[sf_parent_id]
+  ID number of salesforce account.  In salesforce web client, when signed in, go
+  to account > click on desired sales force account.  Then you will see a 16-18 digit number at the end
+  of the URL.
+[sf_attachment_desc]
+  Desired description to be displayed with the uploaded handler in salesforce.
+
+
+=== Sample Configuration
+Submission Id::      65b39e7d-fdbb-11e5-a574-1f1230d968d5
+Field Name::		Attachment
+
+=== Results
+[files]
+  JSON info on the file, including the URL
+
+example results:
+[
+   {
+      "contentType":"image/png",
+      "name":"2016_PartialPlansMap-01.png",
+      "size":175522,
+      "url":"https://myserver/kinetic-filehub/filestores/kinetic-our-slug/2016/03/17/3fe2a934-21fb-4f5d-834b-51a492df5762?expiration=1458597108871&filename=2016_PartialPlansMap-01.png&key=ALM84LG&signature=9-5Ad87HpX5YaNkW2-DryI5SWSg"
+   }
+]
+
+urls are only good for ~5 seconds
